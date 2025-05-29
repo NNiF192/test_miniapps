@@ -1,7 +1,7 @@
 import { TonConnectUI } from "@tonconnect/ui";
 
 const tonConnectUI = new TonConnectUI({
-  manifestUrl: 'https://nnif192.github.io/test_miniapps/ton-connect-manifest.json',
+  manifestUrl: 'https://nnif192.github.io/test_miniapps/tonconnect-manifest.json',
   buttonRootId: 'connect-wallet'
 });
 
