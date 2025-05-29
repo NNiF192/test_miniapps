@@ -1,7 +1,5 @@
 {
-  "url": "https://your-domain.com/",
+  "url": "https://nnif192.github.io/test_miniapps",
   "name": "My TON MiniApp",
-  "iconUrl": "https://your-domain.com/icon.png",
-  "termsOfUseUrl": "https://your-domain.com/terms",
-  "privacyPolicyUrl": "https://your-domain.com/privacy"
+  "iconUrl": "https://nnif192.github.io/test_miniapps/icon.png"
 }
