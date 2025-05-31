@@ -11,11 +11,13 @@ const status = document.getElementById('status');
 tonConnectUI.connectToWallet() {
 const connectedWallet = await tonConnectUI.connectWallet();
 // Do something with connectedWallet if needed
+payButton.disabled = false;
 console.log(connectedWallet);
 }
 
 // Call the function
 tonConnectUI.connectToWallet().catch(error => {
+payButton.disabled = true;
 console.error("Error connecting to wallet:", error);
 });
 
