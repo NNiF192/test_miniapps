@@ -9,8 +9,8 @@ const payButton = document.getElementById('pay-button');
 const status = document.getElementById('status');
 
 tonConnectUI.onStatusChange(wallet => {
-  status.textContent = `123`;
   if (wallet) {
+    status.textContent = `123`;
     payButton.disabled = false;
     status.textContent = `Connected: ${wallet.account.address}`;
   } else {
