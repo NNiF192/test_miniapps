@@ -8,7 +8,18 @@ const tonConnectUI = new TonConnectUI({
 const payButton = document.getElementById('pay-button');
 const status = document.getElementById('status');
 
-tonConnectUI.onStatusChange(wallet => {
+tonConnectUI.connectToWallet() {
+const connectedWallet = await tonConnectUI.connectWallet();
+// Do something with connectedWallet if needed
+console.log(connectedWallet);
+}
+
+// Call the function
+tonConnectUI.connectToWallet().catch(error => {
+console.error("Error connecting to wallet:", error);
+});
+
+/*tonConnectUI.onStatusChange(wallet => {
   if (wallet) {
     payButton.disabled = false;
     status.textContent = `Connected: ${wallet.account.address}`;
@@ -16,7 +27,7 @@ tonConnectUI.onStatusChange(wallet => {
     payButton.disabled = true;
     status.textContent = `Wallet not connected`;
   }
-});
+});*/
 
 payButton.onclick = async () => {
   const transaction = {
