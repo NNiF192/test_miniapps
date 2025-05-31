@@ -32,6 +32,7 @@ console.error("Error connecting to wallet:", error);
 });*/
 
 payButton.onclick = async () => {
+  payButton.disabled = false;
   const transaction = {
     validUntil: Math.floor(Date.now() / 1000) + 600,
     messages: [
