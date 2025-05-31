@@ -1,5 +1,9 @@
 import { TonConnectUI } from "@tonconnect/ui";
 
+const connector = new TonConnectSDK.TonConnect({
+  manifestUrl: 'https://nnif192.github.io/test_miniapps/tonconnect-manifest.json'
+});
+
 const tonConnectUI = new TonConnectUI({
   manifestUrl: 'https://nnif192.github.io/test_miniapps/tonconnect-manifest.json',
   buttonRootId: 'connect-wallet'
@@ -8,9 +12,17 @@ const tonConnectUI = new TonConnectUI({
 const payButton = document.getElementById('pay-button');
 const status = document.getElementById('status');
 
+document.getElementById('connect-wallet').addEventListener('click', async () => {
+  try {
+    await connector.connectWallet();
+    console.log('да');
+  } catch (e) {
+    console.error('нет', e);
+  }
+});
+
 tonConnectUI.onStatusChange(wallet => {
   if (wallet) {
-    status.textContent = `123`;
     payButton.disabled = false;
     status.textContent = `Connected: ${wallet.account.address}`;
   } else {
