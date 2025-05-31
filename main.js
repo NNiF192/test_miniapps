@@ -1,5 +1,3 @@
-import { TonConnectUI } from "@tonconnect/ui";
-
 const connector = new TonConnectSDK.TonConnect({
   manifestUrl: 'https://nnif192.github.io/test_miniapps/tonconnect-manifest.json'
 });
