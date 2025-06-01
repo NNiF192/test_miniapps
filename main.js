@@ -6,15 +6,6 @@ const tonConnectUI = new TonConnectUI.TonConnectUI({
 const payButton = document.getElementById('pay-button');
 const status = document.getElementById('status');
 
-document.getElementById('connect-wallet').addEventListener('click', async () => {
-  try {
-    await connector.connectWallet();
-    console.log('да');
-  } catch (e) {
-    console.error('нет', e);
-  }
-});
-
 tonConnectUI.onStatusChange(wallet => {
   if (wallet) {
     payButton.disabled = false;
