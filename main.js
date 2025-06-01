@@ -1,3 +1,10 @@
+window.addEventListener('DOMContentLoaded', () => {
+  const tonConnectUI = new TonConnectUI.TonConnectUI({
+      manifestUrl: 'https://nnif192.github.io/test_miniapps/tonconnect-manifest.json',
+      buttonRootId: 'connect-wallet'
+  });
+});
+
 const payButton = document.getElementById('pay-button');
 const status = document.getElementById('status');
 
