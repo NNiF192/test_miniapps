@@ -16,6 +16,12 @@
     <div id="connect-wallet">Connect Wallet</div>
     <button id="pay-button" disabled>Pay 1 TON</button>
     <div id="status"></div>
+    <script>
+      const tonConnectUI = new TonConnectUI.TonConnectUI({
+        manifestUrl: 'https://nnif192.github.io/test_miniapps/tonconnect-manifest.json',
+        buttonRootId: 'connect-wallet'
+      });
+    </script>
   </div>
 </body>
 </html>
