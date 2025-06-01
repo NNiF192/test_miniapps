@@ -1,7 +1,3 @@
-const connector = new TonConnectSDK.TonConnect({
-  manifestUrl: 'https://nnif192.github.io/test_miniapps/tonconnect-manifest.json'
-});
-
 const tonConnectUI = new TonConnectUI.TonConnectUI({
   manifestUrl: 'https://nnif192.github.io/test_miniapps/tonconnect-manifest.json',
   buttonRootId: 'connect-wallet'
