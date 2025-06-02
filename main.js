@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', () => {
-  const tonConnectUI = new TonConnectUI.TonConnectUI({
+  const tonConnectUI = new TonConnectUI({
       manifestUrl: 'https://nnif192.github.io/test_miniapps/tonconnect-manifest.json',
       buttonRootId: 'connect-wallet'
   });
