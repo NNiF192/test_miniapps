@@ -1,9 +1,9 @@
 const userId = window.Telegram.WebApp.initDataUnsafe.user?.id || 'anonymous';
 
-const storage = new MyCustomStorage('https://nnif192.github.io/test_miniapps', userId);
+const storage = new MyCustomStorage('https://test-miniapps.onrender.com', userId);
 
 const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
-    manifestUrl: 'https://nnif192.github.io/test_miniapps/tonconnect-manifest.json',
+    manifestUrl: 'https://test-miniapps.onrender.com/tonconnect-manifest.json',
     buttonRootId: 'connect-wallet',
     storage
 });
