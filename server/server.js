@@ -43,6 +43,10 @@ function checkTelegramAuth(data, hash) {
   return hmac === hash;
 }
 
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
 // Эндпоинт для аутентификации (пример)
 app.post('/auth', (req, res) => {
   const { authData } = req.body;
