@@ -2,7 +2,7 @@
   "name": "test_miniapps",
   "version": "1.0.0",
   "description": "",
-  "main": "srq/main.js",
+  "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js"
   },
