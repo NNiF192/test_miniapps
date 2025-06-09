@@ -1,3 +1,32 @@
+class MyCustomStorage {
+  constructor(baseUrl, userId) {
+    this.baseUrl = baseUrl;
+    this.userId = userId;
+  }
+
+  async getItem(key) {
+    const res = await fetch(`${this.baseUrl}/get?user=${this.userId}&key=${key}`);
+    const data = await res.json();
+    return data.value;
+  }
+
+  async setItem(key, value) {
+    await fetch(`${this.baseUrl}/set`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ user: this.userId, key, value })
+    });
+  }
+
+  async removeItem(key) {
+    await fetch(`${this.baseUrl}/remove`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ user: this.userId, key })
+    });
+  }
+}
+
 let userId = 'anonymous';
 
 if (typeof Telegram !== 'undefined' && Telegram.WebApp?.initDataUnsafe?.user) {
