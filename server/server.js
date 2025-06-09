@@ -43,10 +43,12 @@ function checkTelegramAuth(data, hash) {
   return hmac === hash;
 }
 
-app.use(express.static(path.join(__dirname, '..', 'srq')));
+// Статические файлы из srq/
+const staticDir = path.resolve(__dirname, '..', 'srq');
+app.use(express.static(staticDir));
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(path.join(__dirname, '..', 'srq'), 'index.html'));
+  res.sendFile(path.join(staticDir, 'index.html'));
 });
 
 // Эндпоинт для аутентификации (пример)
