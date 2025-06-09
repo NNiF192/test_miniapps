@@ -46,6 +46,7 @@ function checkTelegramAuth(data, hash) {
 // Статические файлы из srq/
 const staticDir = path.resolve(__dirname, '..', 'srq');
 app.use(express.static(staticDir));
+app.use('/public', express.static(path.resolve(__dirname, '..', 'public')));
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(staticDir, 'index.html'));
