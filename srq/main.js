@@ -1,4 +1,10 @@
-const userId = window.Telegram.WebApp.initDataUnsafe.user?.id || 'anonymous';
+let userId = 'anonymous';
+
+if (typeof Telegram !== 'undefined' && Telegram.WebApp?.initDataUnsafe?.user) {
+  userId = Telegram.WebApp.initDataUnsafe.user.id;
+} else {
+  console.warn('Not running in Telegram WebApp — fallback to anonymous user');
+}
 
 const storage = new MyCustomStorage('https://test-miniapps.onrender.com', userId);
 
