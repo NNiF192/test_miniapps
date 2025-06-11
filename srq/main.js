@@ -27,8 +27,8 @@ class MyCustomStorage {
   }
 }
 
+//проверка на подулючение через телегу
 let userId = 'anonymous';
-
 if (typeof Telegram !== 'undefined' && Telegram.WebApp?.initDataUnsafe?.user) {
   userId = Telegram.WebApp.initDataUnsafe.user.id;
 } else {
