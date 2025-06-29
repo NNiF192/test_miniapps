@@ -1,5 +1,11 @@
 require('dotenv').config();
-const { MongoClient } = require('mongodb');
+const { MongoClient } = require('mongoose');
 
 const URL = process.env.MONGO_URL;
-const client = new MongoClient(URL);
+const userSchema = new mongoose.Schema({
+  name: String,
+  age: Number
+});
+
+const User = mongoose.model('User', userSchema);
+await mongoose.connect(URL);
