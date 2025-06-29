@@ -9,3 +9,4 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model('User', userSchema);
 await mongoose.connect(URL);
+// await User.create({ name: 'ada', aga:1 });
